@@ -1,0 +1,12 @@
+{% extends 'generator/base.html' %}
+
+{% block content %}
+<div class="container text-center">
+    <h1>Password generator.</h1>
+    <form action="{% url 'password' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Generate!" class="btn btn-primary">
+    </form>
+</div>
+{% endblock %}

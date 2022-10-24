@@ -1,0 +1,10 @@
+{% extends 'generator/base.html' %}
+
+{% block content %}
+
+<h1>Hello in Password Generate Site!<br>I'm very glad to see you!</h1>
+<h3>You can generate your password or see some of creator of this site below:</h3>
+<p><a href="{% url 'generator' %}">Generate me Password!</a></p>
+<p><a href="{% url 'about' %}">Show me, who you are!</a></p>
+
+{% endblock %}
