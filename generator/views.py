@@ -28,7 +28,15 @@ def pass_view(request):
         characters += numbers
     if 'special' in request.POST.keys():
         characters += special_characters
-
+    # for GET request (version 2)
+    if request.GET.get('length'):
+        length = int(request.GET.get('length'))
+    if request.GET.get('uppercase'):
+        characters += characters.upper()
+    if request.GET.get('numbers'):
+        characters += numbers
+    if request.GET.get('special'):
+        characters += special_characters
 
     for x in range(length):
         password += random.choice(characters)
